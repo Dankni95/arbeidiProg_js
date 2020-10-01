@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Et forslag</title>
+	</head>
+
+	<body>
+
+
+			<header>
+				<h1>FindYourLover</h1>
+			</header>
+
+			<nav>
+				
+			</nav>
+
+			<main>
+
+				<center>
+					<form action="" method="post" id="form">
+						<ul>
+
+							<li>
+								<select name="sex" value="" id="sex">
+									<option value="None selected">Velg kjønn</option>
+									<option value="dame">Dame</option>
+									<option value="mann">Mann</option>
+								</select>
+							</li>
+							<!-- <li>
+								<h1>Sorter etter hobby</h1>
+								<p>min hobby;</p>
+								<input type="checkbox" id="hobby" name="vehicle1" value="trening">
+								<label for="vehicle1"> Trening</label><br>
+								<input type="checkbox" id="klatring" name="vehicle2" value="klatring">
+								<label for="vehicle2"> Klatring</label><br>
+								<input type="checkbox" id="dataspill" name="vehicle3" value="dataspill">
+								<label for="vehicle3"> Dataspill</label><br>
+								<input type="checkbox" id="kode-nerd" name="vehicle3" value="kode-nerd">
+								<label for="vehicle3"> Kode-nerd</label><br>
+							</li> -->
+							<li>
+								<p>placeholder siden jeg er lat til å bruke css for mellomrom ;)</p>
+								<label for="age" maxlength="2">Alder:</label>
+								<input type="number" id="age" value="">
+							</li>
+							<li>
+								<p class="space_me_1"></p>
+								<button type="button" onclick="run()">Submit</button></li>
+								<li>
+									<p class="space_me"></p>
+									<button type="button" value="Clean" onclick="Clean()">CLEAN MEEEEE</button></li>
+						</ul>
+
+
+					</form>
+					<div id="profiler"></div>
+					<br>
+
+				</center>
+
+				<section>
+					<script>
+						function Clean(){
+						  document.getElementById("profiler").innerHTML=`<h3>Cleaned space for you darling!</h3>`;
+						}
+
+	
+ 					
+						
+
+						function run() {
+							
+							
+						var ageInput = parseInt(document.getElementById("age").value);
+						var sexInput = document.getElementById("sex").value;
+						/* var hobbyInput = document.getElementById("hobby"); */
+
+						var users = [{
+								navn: "Mark",
+								alder: 26,
+								kjønn: "mann",
+								bilde: "man1.jpg",
+								bio: "liker katt",
+								hobby: ""
+							},
+							{
+								navn: "Ed",
+								alder: 24,
+								kjønn: "mann",
+								bilde: "man2.jpg",
+								bio: "liker katt",
+								hobby: ""
+							},
+							{
+								navn: "Line",
+								alder: 26,
+								kjønn: "dame",
+								bilde: "woman1.jpg",
+								bio: "liker katt",
+								hobby: ""
+							},
+							{
+								navn: "Lisa",
+								alder: 24,
+								kjønn: "dame",
+								bilde: "woman2.jpg",
+								bio: "liker katt",
+								hobby: ""
+							},
+							{
+								navn: "Markus the bro",
+								alder: 23,
+								kjønn: "mann",
+								bilde: "man3.jpg",
+								bio: "dette er Markus han er min bror ;), han er i Array nr 4 og fått tildelt bilde `man3` ",
+								hobby: ""
+							},
+							{
+								navn: "Edvard",
+								alder: 27,
+								kjønn: "mann",
+								bilde: "man4.jpg",
+								bio: "liker katt, dette er Edvard, han er nr 4 i Array og fått tildelt bildet `man4`",
+								hobby: ""
+							},
+							{
+								navn: "Britt Åge",
+								alder: 23,
+								kjønn: "dame",
+								bilde: "woman3.jpg",
+								bio: "liker katt, dette er Britt, hun er tildelt Array nr 5 og bilde woman3",
+								hobby: ""
+							},
+							{
+								navn: "Lisa-marie",
+								alder: 27,
+								kjønn: "dame",
+								bilde: "woman4.jpg",
+								bio: "liker katt, dette er Lisa-marie, hun er tildelt array nr 6 og bildet woman4 som mangler",
+								hobby: ""
+
+							}, 
+							{
+
+								navn: "Åge bård",
+								alder: 22,
+								kjønn: "mann",
+								bilde: "man5.jpg",
+								bio: "liker katt, dette er åge, han er tildelt Array nr 6 og mangler bildet(man5)",
+								hobby: ""
+							},
+							{
+								navn: "Lars",
+								alder: 28,
+								kjønn: "mann",
+								bilde: "man6.jpg",
+								bio: "liker katt, dette er lars han er i array nr 7 og mangler bildet(man6)",
+								hobby: ""
+							},
+							{
+								navn: "Torunn",
+								alder: 22,
+								kjønn: "dame",
+								bilde: "woman5.jpg",
+								bio: "liker katt, dette er torunn, hun er i array nr 8 og mangler bildet(woman5)",
+								hobby: ""
+							}
+						]
+							users.forEach (run) 
+							
+							function run (users){	
+
+									
+							
+								 if (users.kjønn === sexInput) {
+									if (users.alder >= 25 && ageInput >= 25) {
+										profiler.innerHTML += `<h3>Navn: ${users.navn}</h3><br>
+								<p>Alder: ${users.alder}</p>
+								<p>Bio: ${users.bio}</p>
+								<img src="images/${users.bilde}">`
+									} else if (ageInput < 25 && users.alder < 25) {
+
+										profiler.innerHTML += `<h3>Navn: ${users.navn}</h3><br>
+								<p>Alder: ${users.alder}</p>
+								<p>Bio: ${users.bio}</p>
+								<img src="images/${users.bilde}">`
+									}
+								} 
+							}
+							
+
+						
+							
+
+						}
+					</script>
+				</section>
+
+			</main>
+
+
+
+	</body>
+
+</html>

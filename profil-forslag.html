@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Et forslag</title>
+	</head>
+
+	<body>
+
+		<div>
+
+			<header>
+				<h1>FindYourLove</h1>
+			</header>
+
+			<nav>
+				<ul>
+					<li><a href="alle-profiler.html">Alle profiler</a></li>
+					<li><a href="profil-forslag.html">Dagens profil</a></li>
+				</ul>
+			</nav>
+
+			<main>
+
+				<center>
+					<h1>Viser profiler under 25 og over 25 år</h1>
+					<form action="" method="post" id="form">
+						<ul>
+
+							<li>
+
+								<!-- mann eller dame valg, lagre valg i value -->
+
+								<select name="sex" value="" id="sex">
+									<option value="None selected">Velg kjønn</option>
+									<option value="dame">Dame</option>
+									<option value="mann">Mann</option>
+								</select>
+							</li>
+							<li>
+
+								<!-- alder input box, lagre alder i value -->
+
+								<label for="age" maxlength="2">Alder:</label>
+								<input type="number" id="age" value="">
+							</li>
+
+							<!-- på klikk kjør funsjonen run -->
+
+							<li><button type="button" onclick="run()">Submit</button></li>
+						</ul>
+
+
+					</form>
+					<div id="profiler"></div>
+					<br>
+
+				</center>
+
+				<section>
+					<script>
+						// denne funsjonen kjører når man klikker på submit knappen
+
+						function run() {
+
+							// her blir alder henta fra "alder" input i html som er lagret i value og setter det inn i string ageInput
+							// samtidig bruker vi parseInt til å være 100% sikker at alder fra html blir lagret som TALL og ikke string
+
+							var ageInput = parseInt(document.getElementById("age").value);
+
+							// her blir kjønn fra "kjønn" input i html som er lagret i value og setter det inn i string sexInput
+							// blir mye snakk om sex på grunn av denne ;)
+
+							var sexInput = document.getElementById("sex").value;
+
+
+							// bygger array og lagrer i variabel users
+
+							var users = [{
+									navn: "Mark",
+									alder: 26,
+									kjønn: "mann",
+									bilde: "man1.jpg",
+									bio: "liker katt",
+									hobby: ""
+								},
+								{
+									navn: "Ed",
+									alder: 24,
+									kjønn: "mann",
+									bilde: "man2.jpg",
+									bio: "liker katt",
+									hobby: ""
+								},
+								{
+									navn: "Line",
+									alder: 26,
+									kjønn: "dame",
+									bilde: "woman1.jpg",
+									bio: "liker katt",
+									hobby: ""
+								},
+								{
+									navn: "Lisa",
+									alder: 24,
+									kjønn: "dame",
+									bilde: "woman2.jpg",
+									bio: "liker katt",
+									hobby: ""
+								}
+							]
+
+							// her står det: kjør koden under for hvor mange blokker det er i arrayen, for hver gang du har kjørt koden legg +1 i vår variabel. Hver +1 er hvert array blokk sjekket mot våre if-conditions. Når alle (i dette tilfelle 4) blokkene sjekket, stopp loopen.
+
+
+							for (let i = 0; i < users.length; i++) {
+
+								// sammenligner kjønn på array og kjønn i inputen hvis likt, kjør
+								// sorterer mellom dame og mann
+
+
+								if (users[i].kjønn === sexInput) {
+
+									// hvis array alder større eller lik 25 og ageInput større/lik 25, kjør
+									// kjører alle over eller lik 25
+
+									if (users[i].alder >= 25 && ageInput >= 25) {
+
+										// brukte console.log for å være sikker at ifs fungerer, unødvendig nå
+										console.log("du traff ifen");
+
+										//hvis ifen over ble true, kjør denne koden
+										// bruk av template litterals for å få ut array navn, alder,bio og bilde
+										// vår i variabel som brukes i loopen, forteller koden hvem av array blokkene å putte inn i koden under
+										profiler.innerHTML += `<h3>Navn: ${users[i].navn}</h3><br>
+								<p>Alder: ${users[i].alder}</p>
+								<p>Bio: ${users[i].bio}</p>
+								<img src="images/${users[i].bilde}">`
+
+
+										// hvis ageInput er mindre enn 25 og Array alder er mindre enn 25, kjør
+										// kjører alle under 25
+
+									} else if (ageInput < 25 && users[i].alder < 25) {
+										console.log("du hitta elsen");
+
+										profiler.innerHTML += `<h3>Navn: ${users[i].navn}</h3><br>
+								<p>Alder: ${users[i].alder}</p>
+								<p>Bio: ${users[i].bio}</p>
+								<img src="images/${users[i].bilde}">`
+									}
+								}
+
+							}
+
+						}
+					</script>
+				</section>
+
+			</main>
+
+		</div>
+
+
+	</body>
+
+</html>

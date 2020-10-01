@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "FindYourLove",
+		"compile-hero.disable-compile-files-on-did-save-code": false,
+		"sqltools.connections": [
+			{
+				"mysqlOptions": {
+					"authProtocol": "default"
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 3306,
+				"askForPassword": true,
+				"driver": "MySQL",
+				"name": "Daniel",
+				"database": "test",
+				"username": "root"
+			}
+		],
+		"git.ignoreLimitWarning": true
+	}
+}

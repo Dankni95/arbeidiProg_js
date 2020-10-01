@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>FindYourLove</title>
+	</head>
+
+	<body>
+
+		<div>
+
+			<header>
+				<h1>FindYourLove - Alle profiler</h1>
+			</header>
+
+			<nav>
+				<ul>
+					<li><a href="alle-profiler.html">Alle profiler</a></li>
+					<li><a href="profil-forslag.html">Dagens profil</a></li>
+				</ul>
+			</nav>
+
+		</div>
+		<center id="Profil">
+
+
+			<script>
+				var profiler = document.getElementById("Profil");
+
+				var bildeArray = ["man1.jpg", "man2.jpg", "man3.jpg", "woman1.jpg", "woman2.jpg", "woman3.jpg"];
+
+				var ageArray = ["25", "21", "30", "30", "25", "21"];
+				
+				var ageArray =  ageArray.map(Number);
+
+				var nameArray = ["Mark",
+					"Daniel",
+					"Ed", "karen",
+					"Lisa ",
+					"Mari"];
+
+				var descArray = ["elsker hunder","elsker katter","liker pistoler","gamer veldig mye","får ikke sove","gal etter parfymer"];
+
+				for (var teller = 0; teller < bildeArray.length; teller++) {
+					profiler.innerHTML += `<h3>${nameArray[teller]} ${ageArray[teller]} ${descArray[teller]}</h3>
+					<img src="images/${bildeArray[teller]}">`;
+
+
+
+				}
+			</script>
+		</center>
+
+
+	</body>
+
+</html>
